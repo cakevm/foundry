@@ -1,4 +1,4 @@
-use alloy_consensus::{BlobTransactionSidecarVariant, EthereumTypedTransaction};
+use alloy_consensus::{BlobTransactionSidecar, EthereumTypedTransaction};
 use alloy_network::{
     BuildResult, NetworkWallet, TransactionBuilder, TransactionBuilder4844, TransactionBuilderError,
 };
@@ -524,11 +524,11 @@ impl TransactionBuilder4844 for FoundryTransactionRequest {
         self.as_mut().set_max_fee_per_blob_gas(max_fee_per_blob_gas);
     }
 
-    fn blob_sidecar(&self) -> Option<&BlobTransactionSidecarVariant> {
+    fn blob_sidecar(&self) -> Option<&BlobTransactionSidecar> {
         self.as_ref().blob_sidecar()
     }
 
-    fn set_blob_sidecar(&mut self, sidecar: BlobTransactionSidecarVariant) {
+    fn set_blob_sidecar(&mut self, sidecar: BlobTransactionSidecar) {
         self.as_mut().set_blob_sidecar(sidecar);
     }
 }
