@@ -1651,6 +1651,7 @@ version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7c02d123df017efcdfbd739ef81735b36c5ba83ec3c59c80a9d7ecc718f92e50"
 dependencies = [
+ "serde",
  "zeroize",
 ]
 
@@ -7189,6 +7190,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "metrics"
+version = "0.24.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5d5312e9ba3771cfa961b585728215e3d972c950a3eed9252aa093d6301277e8"
+dependencies = [
+ "ahash",
+ "portable-atomic",
+]
+
+[[package]]
 name = "miette"
 version = "7.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -9181,6 +9192,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "reth-db-api"
+version = "1.11.3"
+source = "git+https://github.com/paradigmxyz/reth?rev=c82d435#c82d43594e9868f994fc28e00169ba86598f40dc"
+dependencies = [
+ "alloy-consensus",
+ "alloy-primitives",
+ "arrayvec",
+ "bytes",
+ "derive_more",
+ "metrics",
+ "modular-bitfield",
+ "reth-codecs",
+ "reth-db-models",
+ "reth-ethereum-primitives",
+ "reth-primitives-traits",
+ "reth-prune-types",
+ "reth-stages-types",
+ "reth-storage-errors",
+ "reth-trie-common",
+ "roaring",
+ "serde",
+]
+
+[[package]]
 name = "reth-db-models"
 version = "1.11.3"
 source = "git+https://github.com/paradigmxyz/reth?rev=c82d435#c82d43594e9868f994fc28e00169ba86598f40dc"
@@ -9188,6 +9223,7 @@ dependencies = [
  "alloy-eips",
  "alloy-primitives",
  "bytes",
+ "modular-bitfield",
  "reth-codecs",
  "reth-primitives-traits",
  "serde",
@@ -9336,9 +9372,11 @@ dependencies = [
  "alloy-rlp",
  "alloy-rpc-types-eth",
  "alloy-trie",
+ "byteorder",
  "bytes",
  "dashmap",
  "derive_more",
+ "modular-bitfield",
  "once_cell",
  "quanta",
  "reth-codecs",
@@ -9357,6 +9395,7 @@ source = "git+https://github.com/paradigmxyz/reth?rev=c82d435#c82d43594e9868f994
 dependencies = [
  "alloy-primitives",
  "derive_more",
+ "modular-bitfield",
  "reth-codecs",
  "serde",
  "strum",
@@ -9418,6 +9457,7 @@ source = "git+https://github.com/paradigmxyz/reth?rev=c82d435#c82d43594e9868f994
 dependencies = [
  "alloy-primitives",
  "bytes",
+ "modular-bitfield",
  "reth-codecs",
  "reth-trie-common",
  "serde",
@@ -9938,6 +9978,16 @@ checksum = "bb919243f34364b6bd2fc10ef797edbfa75f33c252e7998527479c6d6b47e1ec"
 dependencies = [
  "bytes",
  "rustc-hex",
+]
+
+[[package]]
+name = "roaring"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8ba9ce64a8f45d7fc86358410bb1a82e8c987504c0d4900e9141d69a9f26c885"
+dependencies = [
+ "bytemuck",
+ "byteorder",
 ]
 
 [[package]]
@@ -11501,9 +11551,11 @@ dependencies = [
  "alloy-serde",
  "base64 0.22.1",
  "derive_more",
+ "modular-bitfield",
  "once_cell",
  "p256",
  "reth-codecs",
+ "reth-db-api",
  "reth-ethereum-primitives",
  "reth-primitives-traits",
  "reth-rpc-convert",

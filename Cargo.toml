@@ -480,6 +480,7 @@ ethereum_ssz = "0.10"
 tempo-chainspec = { git = "https://github.com/tempoxyz/tempo", branch = "main", default-features = false }
 tempo-primitives = { git = "https://github.com/tempoxyz/tempo", branch = "main", default-features = false, features = [
     "serde",
+    "reth-codec",
 ] }
 tempo-alloy = { git = "https://github.com/tempoxyz/tempo", branch = "main", default-features = false }
 tempo-evm = { git = "https://github.com/tempoxyz/tempo", branch = "main", default-features = false }
